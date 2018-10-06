@@ -1,0 +1,1 @@
+# tryminex-exchange-api-doc

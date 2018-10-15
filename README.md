@@ -23,13 +23,13 @@ The WebSocket API document can be found here: http://github.com/tryminexAPI/trym
     - [users](#users)
     - [account](#account)
     - [account{currency}](#account{currency})
-    - [订单查询](#订单查询)
-        - [查询交易中订单](#查询交易中订单)
-        - [查询历史交易订单](#查询历史交易订单)
-        - [查询指定交易订单](#查询指定交易订单)
-        - [创建交易订单](#创建交易订单)
-        - [取消交易中订单](#取消交易中订单)
-        - [清空交易中订单](#清空交易中订单)
+    - [orders](#orders)
+        - [list orders](#list_orders)
+        - [list order](#list_order)
+        - [my trades](#my_trades)
+        - [create order](#create_order)
+        - [cancel order](#cancel_order)
+        - [cancel orders](#cancel_orders)
  
 **End Point**
 ----
@@ -508,7 +508,7 @@ And you can make the request:
          ```
  
 
-### My Trades
+### my_trades
 
 * **Method:**
   `GET`

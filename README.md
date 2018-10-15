@@ -7,8 +7,8 @@ Please be kindly noticed that currently this version is in BETA and we may keep 
 The WebSocket API document can be found here: http://github.com/tryminexAPI/tryminex-exchange-api-doc/WEB_SOCKET_API.md
 
 ## Index
-- [API End Point](#End Point)
-    - [endpoint](#End Point)
+- [API End Point](#end-point)
+    - [endpoint](#end-point)
 - [Response Message](#Response Message)
     - [response message](#Response Message)
 - [Rate Limiting](#Rate Limiting)

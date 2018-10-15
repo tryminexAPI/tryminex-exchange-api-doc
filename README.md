@@ -22,7 +22,7 @@ The WebSocket API document can be found here: http://github.com/tryminexAPI/trym
 - [Auth API](#auth-api)
     - [users](#users)
     - [account](#account)
-    - [account{currency}](#account{currency})
+    - [account{currency}](#accountcurrency)
     - [orders](#orders)
         - [list orders](#list_orders)
         - [list order](#list_order)

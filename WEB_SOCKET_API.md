@@ -5,15 +5,15 @@ Please be kindly noticed that currently this version is in BETA and we may keep 
 
 ## Index
 - [Request and subscription specification](#request-and-subscription-specification)
-    - [End Point](#1.end-point)
-    - [Data Compression](#2-data-compression)
-    - [Heartbeat](#3-heartbeat)
-    - [Message Format](#4-message-format)
+    - [End Point](#end-point)
+    - [Data Compression](#data-compression)
+    - [Heartbeat](#heartbeat)
+    - [Message Format](#message-format)
         - [Request Message](#request-message)
         - [Response And Pushed Message](#response-and-pushed-message)
-    - [Request And Response](#5-request-and-response)
-    - [Subscribe](#6-subscribe)
-    - [Unsubscribe](#7-unsubscribe)
+    - [Request And Response](#request-and-response)
+    - [Subscribe](#subscribe)
+    - [Unsubscribe](#unsubscribe)
 - [API Reference](#api-reference)
     - [request tickers](#request-tickers)
     - [request ticker{symbol}](#request-tickersymbol)
@@ -23,17 +23,17 @@ Please be kindly noticed that currently this version is in BETA and we may keep 
     - [subscribe kline](#subscribe-kline)
     - [subscribe depth](#subscribe-depth)
     - [subscribe orders](#subscribe-orders)
-    - [unsubscribe](#unsubscribe) 
+    - [unsubscribe request](#unsubscribe-request) 
 
 ## Request and subscription specification
 
-### 1.end point
+### end point
 SSL Websocket Connection: `wss://api.tryminex.com:9010/ws`.
 
-### 2.data compression
+### data compression
 All return data of websocket APIs needs to be unzipped except heartbeat.
 
-### 3.heartbeat
+### heartbeat
 Websocket API need heartbeat after connection establishment, websocket client launch `ping` message to websocket server, and then websocket server response `pong` message.
 
 Mind! `ping` message and `pong` message must accord with RFC6455's definition.
@@ -54,7 +54,8 @@ WebSocket server response websockt `pong` frame with body, as follows:
 
 WebSocket client must send heartbeat message eveny 5 seconds after connected with websocket server. If websocket server has not received heartbeat message within 10 seconds, websocket server will dissconnect this connection.
 
-### 4.message format
+### message format
+
 #### request message
 * **id**: [string] client genrate unique id, used to differentiate requests.
 * **type**: [string] request type, detail definition will be defined in the following sections.
@@ -95,7 +96,7 @@ Example response:
 }
 ```
 
-### 5.request and response
+### request and response
 Request data, return only one data.
 
 **correct example**
@@ -140,7 +141,7 @@ Request data, return only one data.
 }
 ```
 
-### 6.subscribe
+### subscribe
 To receive data you have to send a "sub" message first.
 
 **correct example**
@@ -211,7 +212,7 @@ After subscribe,you will receive updates upon any change.
 }
 ```
 
-### 7.unsubscribe
+### unsubscribe 
 To stop receiving data from a channel you have to send a "unsubscribe" message.
 
 **correct example**
@@ -571,7 +572,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
             }
         ```
 
-### unsubscribe
+### unsubscribe request
 
 * **description**
   unsubscribe the information of specified channel.

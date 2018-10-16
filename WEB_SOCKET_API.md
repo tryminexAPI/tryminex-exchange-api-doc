@@ -5,7 +5,7 @@ Please be kindly noticed that currently this version is in BETA and we may keep 
 
 ## Index
 - [Request and subscription specification](#request-and-subscription-specification)
-    - [End Point](#1-end-point)
+    - [End Point](#1.end-point)
     - [Data Compression](#2-data-compression)
     - [Heartbeat](#3-heartbeat)
     - [Message Format](#4-message-format)

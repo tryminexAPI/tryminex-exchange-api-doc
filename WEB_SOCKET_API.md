@@ -69,12 +69,12 @@ Example request:
 	"type": "symbol/all"
 }
 
-// query kline of USDT_TMX, period is 1 min.
+// query kline of TMX_USDT, period is 1 min.
 {
 	"id": "1",
 	"type": "kline",
 	"data": {
-		"symbol": "USDT_TMX",
+		"symbol": "TMX_USDT",
 		"period": "1m"
 	}
 }
@@ -91,7 +91,7 @@ Example response:
 {
 	"id": "1",
 	"code": "1000",
-	"data": "{\"symbol\":\"USDT_TMX\",\"high\":0,\"low\":0,\"staPrice\":0,\"lastPrice\":0,\"total\":0}",
+	"data": "{\"symbol\":\"TMX_USDT\",\"high\":0,\"low\":0,\"staPrice\":0,\"lastPrice\":0,\"total\":0}",
 	"desc": "success"
 }
 ```
@@ -105,7 +105,7 @@ Request data, return only one data.
 {
 	"id": "1",
 	"type": "symbol",
-	"data": {"symbol": "USDT_TMX" }
+	"data": {"symbol": "TMX_USDT" }
 }
 ```
 
@@ -114,7 +114,7 @@ Request data, return only one data.
 {
 	"id": "1",
 	"code": "1000",
-	"data": "{\"symbol\":\"USDT_TMX\",\"high\":0,\"low\":0,\"staPrice\":0,\"lastPrice\":0,\"total\":0}",
+	"data": "{\"symbol\":\"TMX_USDT\",\"high\":0,\"low\":0,\"staPrice\":0,\"lastPrice\":0,\"total\":0}",
 	"desc": "success"
 }
 ```
@@ -152,7 +152,7 @@ To receive data you have to send a "sub" message first.
 	"type": "sub",
 	"data": {
 		"channels": [{
-			"symbol": "USDT_TMX",
+			"symbol": "TMX_USDT",
 			"channelNames": ["kline", "trade", "order"]
 		}]
 	}
@@ -177,7 +177,7 @@ After subscribe,you will receive updates upon any change.
 	"id": "1",
 	"code": "1000",
 	"data": "[{
-             	"symbol": "USDT_TMX",
+             	"symbol": "TMX_USDT",
              	"num": 9,
              	"price": 0.01,
              	"type": "SELL",
@@ -195,7 +195,7 @@ After subscribe,you will receive updates upon any change.
 	"type": "sub",
 	"data": {
 		"channels": [{
-			"symbol": "USDT_TMX",
+			"symbol": "TMX_USDT",
 			"channelNames": ["xxxx"]
 		}]
 	}
@@ -223,7 +223,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
 	"type": "unsub",
 	"data": {
 		"channels": [{
-			"symbol": "USDT_TMX",
+			"symbol": "TMX_USDT",
 			"channelNames": ["kline"]
 		}]
 	}
@@ -248,7 +248,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
 	"type": "unsub",
 	"data": {
 		"channels": [{
-			"symbol": "USDT_TMX",
+			"symbol": "TMX_USDT",
 			"channelNames": ["xxxx"]
 		}]
 	}
@@ -291,7 +291,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
            {
            	"id": "1",
            	"code": "1000",
-           	"data": "[{\"symbol\":\"USDT_TMX\",\"high\":0,\"low\":0,\"staPrice\":0,\"lastPrice\":0,\"total\":0}]",
+           	"data": "[{\"symbol\":\"TMX_USDT\",\"high\":0,\"low\":0,\"staPrice\":0,\"lastPrice\":0,\"total\":0}]",
            	"desc": "success"
            }
         ```
@@ -310,7 +310,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
                 "id": "1",
                 "type": "symbol",
                 "data": {
-                    "symbol": "USDT_TMX"    // market symbol
+                    "symbol": "TMX_USDT"    // market symbol
                 }
             }
         ```
@@ -324,7 +324,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
            {
            	"id": "1",
            	"code": "1000",
-           	"data": "[{\"symbol\":\"USDT_TMX\",\"high\":0,\"low\":0,\"staPrice\":0,\"lastPrice\":0,\"total\":0}]",
+           	"data": "[{\"symbol\":\"TMX_USDT\",\"high\":0,\"low\":0,\"staPrice\":0,\"lastPrice\":0,\"total\":0}]",
            	"desc": "success"
            }
         ```
@@ -343,7 +343,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
                 "id": "1",
                 "type": "kline",
                 "data": {
-                    "symbol": "USDT_TMX",   // market symbol
+                    "symbol": "TMX_USDT",   // market symbol
                     "period": "1m"          // one of 1m,5m,15m,30m,1h,1d
                 }
             }
@@ -358,7 +358,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
             {
                 "id": "1",
                 "code": "1000",
-                "data": "[[\"symbol\":\"USDT_TMX\", \"time\":1534425360, \"open\":0.04,\"maxPrice\":0.04,\"lowPrice\":0.04,\"close\"0.04,\"amount\":0], \"klineType\": \"1m\"]"...
+                "data": "[[\"symbol\":\"TMX_USDT\", \"time\":1534425360, \"open\":0.04,\"maxPrice\":0.04,\"lowPrice\":0.04,\"close\"0.04,\"amount\":0], \"klineType\": \"1m\"]"...
                 "desc": "success"
             }
         ```
@@ -377,7 +377,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
                 "id": "1",
                 "type": "depth",
                 "data": {
-                    "symbol": "USDT_BTC",   // market symbol
+                    "symbol": "TMX_USDT",   // market symbol
                     "limit": 2              // limit the number of returned
                 }
             }
@@ -411,7 +411,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
                 "id": "1",
                 "type": "order",
                 "data": {
-                    "symbol": "USDT_TMX",   // market symbol
+                    "symbol": "TMX_USDT",   // market symbol
                     "limit": 2              // limit the number of returned
                 }
             }
@@ -446,7 +446,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
                 "type": "sub",
                 "data": {
                     "channels": [{
-                        "symbol": "USDT_TMX",
+                        "symbol": "TMX_USDT",
                         "channelNames": ["kline"]
                     }]
                 }
@@ -473,7 +473,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
             {
                 "id": "1",
                 "code": "1000",
-                "data": "[[\"symbol\":\"USDT_TMX\", \"time\":1534425360, \"open\":0.04,\"maxPrice\":0.04,\"lowPrice\":0.04,\"close\"0.04,\"amount\":0], \"klineType\": \"1m\"]"...
+                "data": "[[\"symbol\":\"TMX_USDT\", \"time\":1534425360, \"open\":0.04,\"maxPrice\":0.04,\"lowPrice\":0.04,\"close\"0.04,\"amount\":0], \"klineType\": \"1m\"]"...
                 "desc": "success"
             }
         ```
@@ -493,7 +493,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
                 "type": "sub",
                 "data": {
                     "channels": [{
-                        "symbol": "USDT_TMX",
+                        "symbol": "TMX_USDT",
                         "channelNames": ["depth"]
                     }]
                 }
@@ -540,7 +540,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
                 "type": "sub",
                 "data": {
                     "channels": [{
-                        "symbol": "USDT_TMX",
+                        "symbol": "TMX_USDT",
                         "channelNames": ["order"]
                     }]
                 }
@@ -567,7 +567,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
             {
                 "id": "1",
                 "code": "1000",
-                "data": "[{\"symbol\":\"USDT_TMX\",\"num\":9,\"price\":0.01,\"type\":\"SELL\",\"time\":\"1533971821\"}...]",
+                "data": "[{\"symbol\":\"TMX_USDT\",\"num\":9,\"price\":0.01,\"type\":\"SELL\",\"time\":\"1533971821\"}...]",
                 "desc": "success"
             }
         ```
@@ -587,7 +587,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
             "type": "unsub",
             "data": {
                 "channels": [{
-                    "symbol": "USDT_TMX",
+                    "symbol": "TMX_USDT",
                     "channelNames": ["kline"]
                 }]
             }

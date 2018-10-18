@@ -77,7 +77,7 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
               "msg": "success",
               "data": [
                   {
-                      "symbol": "USDT_BTC",// market symbol
+                      "symbol": "BTC_USDT",// market symbol
                       "name": "BTC/USDT",// market name
                       "minAmount": 0.0001,// Order minimum amount.
                       "minPrice": 1e-8,// Order minimum price.
@@ -109,7 +109,7 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
                "msg": "success",
                "data": [
                    {
-                       "symbol": "USDT_TMX",// market symbol
+                       "symbol": "TMX_USDT",// market symbol
                        "high": 0.06874125,// Highest Price within last 24 hours
                        "low": 0.06812365, // Lowest price within last 24 hours
                        "staPrice": 0,// Starting Price within last 24 hours
@@ -135,7 +135,7 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
 
 * **Example Request:**
     * **Request:**
-    `GET /api/v1/ticker/USDT_TMX`
+    `GET /api/v1/ticker/TMX_USDT`
   
     * **Success Response:**  
         * **Code:** 200
@@ -147,7 +147,7 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
            "msg": "success",
            "data": [
                {
-                   "symbol": "USDT_TMX",// market symbol
+                   "symbol": "TMX_USDT",// market symbol
                    "high": 0,// Highest Price within last 24 hours
                    "low": 0,// Lowest price within last 24 hours
                    "staPrice": 0,// Starting Price within last 24 hours
@@ -176,7 +176,7 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
 
 * **Example Request:**
     * **Request:**
-    `GET /api/v1/depth?symbol=USDT_TMX&limit=2`
+    `GET /api/v1/depth?symbol=TMX_USDT&limit=2`
 
     * **Success Response:**
         * **Code:** 200
@@ -255,7 +255,7 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
 
 * **Example Request:**
     * **Request:**
-    `GET /api/v1/kline?symbol=USDT_BTC&period=1`
+    `GET /api/v1/kline?symbol=TMX_USDT&period=1`
   
     * **Success Response:**  
         * **Code:** 200
@@ -452,7 +452,7 @@ And you can make the request:
           "msg": "success",
           "data": [
               {
-                  "symbol": "BTC_ETH",// Your BTC_ETH symbol
+                  "symbol": "TMX_USDT",// Your TMX_USDT symbol
                   "orderNo": "7210ae281123431ab2f85a81f9706abd",// Your order id
                   "number": 1,// The amount user want to sell/buy
                   "tradedNumber": 0,// The executed volume
@@ -494,7 +494,7 @@ And you can make the request:
                  "code": "10000",
                  "msg": "success",
                  "data": {
-                      "symbol": "BTC_ETH",// Your BTC_ETH symbol
+                      "symbol": "TMX_USDT",// Your TMX_USDT symbol
                        "orderNo": "7210ae281123431ab2f85a81f9706abd",// Your order id
                        "number": 1,// The amount user want to sell/buy.
                        "tradedNumber": 0,// The executed volume
@@ -540,7 +540,7 @@ And you can make the request:
               "msg": "success",
               "data": [
                   {
-                      "symbol": "BTC_ETH",// Your BTC_ETH symbol
+                      "symbol": "TMX_USDT",// Your TMX_USDT symbol
                       "orderNo": "7210ae281123431ab2f85a81f9706abd",// Your order id
                       "number": 1,// The amount user want to sell/buy.
                       "tradedNumber": 0,// The executed volume
@@ -579,7 +579,7 @@ And you can make the request:
         ```
             POST /api/v1/order/create?appid=05778EA9AD6F48B8983A1826E973155A&nonce=xxx&timestamp=xxx&sign=xxx
             [body]
-            symbol=BTC_ETH&tradeType=sell&price=10000.00008&amount=100
+            symbol=TMX_USDT&tradeType=sell&price=10000.00008&amount=100
         
         ```
 

@@ -426,7 +426,7 @@ To stop receiving data from a channel you have to send a "unsubscribe" message.
         {
             "id": "1",
             "code": "1000",
-            "data": "[{\"symbol\":\"USDT_TMX\",\"num\":9,\"price\":0.01,\"type\":\"SELL\",\"time\":\"1533971821\"}...]",
+            "data": "[{\"symbol\":\"TMX_USDT\",\"num\":9,\"price\":0.01,\"type\":\"SELL\",\"time\":\"1533971821\"}...]",
             "desc": "success"
         }
         ```

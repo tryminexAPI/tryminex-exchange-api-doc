@@ -29,6 +29,7 @@ The WebSocket API document can be found here: https://github.com/tryminexAPI/try
         - [my trades](#my_trades)
         - [create order](#create_order)
         - [cancel order](#cancel_order)
+- [Error Code](#error-code)       
  
 **End Point**
 ----
@@ -625,3 +626,23 @@ And you can make the request:
                     "msg": "success"
                 }
         ```  
+
+## error code
+
+| code | describe |
+| :------: | :------ |
+| 10000 | success | 
+| 10001 | server error |
+| 10002 | parameter error |
+| 10003 | auth info invalid |
+| 10004 | user not exist |
+| 10005 | symbol is not exist |
+| 10006 | invalid order minmum account |
+| 10007 | invalid order minmum price |
+| 10008 | not exist order id |
+| 10009 | order had been cancelled |
+| 10010 | order had been traded |
+| 10011 | appkey has expired |
+| 10012 | request nonce conflict |
+| 10013 | time diff is too large |
+| 10014 | client ip not allow |

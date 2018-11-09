@@ -29,7 +29,6 @@ The WebSocket API document can be found here: https://github.com/tryminexAPI/try
         - [my trades](#my_trades)
         - [create order](#create_order)
         - [cancel order](#cancel_order)
-        - [cancel orders](#cancel_orders)
  
 **End Point**
 ----
@@ -110,11 +109,11 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
                "data": [
                    {
                        "symbol": "TMX_USDT",// market symbol
-                       "high": 0.06874125,// Highest Price within last 24 hours
-                       "low": 0.06812365, // Lowest price within last 24 hours
-                       "staPrice": 0,// Starting Price within last 24 hours
-                       "lastPrice": 0.04,// Last trade's price
-                       "total": 0// Trade volume within last 24 hours
+                       "high": 0.0262542,// Highest Price within last 24 hours
+                       "low": 0.015, // Lowest price within last 24 hours
+                       "staPrice": 0.0229033,// Starting Price within last 24 hours
+                       "lastPrice": 0.0192018,// Last trade's price
+                       "total": 2380620.10704553// Trade volume within last 24 hours
                    },
                    ...
                ]
@@ -148,11 +147,11 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
            "data": [
                {
                    "symbol": "TMX_USDT",// market symbol
-                   "high": 0,// Highest Price within last 24 hours
-                   "low": 0,// Lowest price within last 24 hours
-                   "staPrice": 0,// Starting Price within last 24 hours
-                   "lastPrice": 0.04,// Last trade's price
-                   "total": 0// Trade volume within last 24 hours
+                   "high": 0.0262542,// Highest Price within last 24 hours
+                   "low": 0.015,// Lowest price within last 24 hours
+                   "staPrice": 0.0229033,// Starting Price within last 24 hours
+                   "lastPrice": 0.0192018,// Last trade's price
+                   "total": 2380620.10704553// Trade volume within last 24 hours
                }
            ]
        }
@@ -297,11 +296,11 @@ For ALL API the maximum access rate is *200 requests per minute, any client init
 
 For example:
 
-if your `api key` is `xxx`, and your `api secret` is `yyy`, then the `payload` is `GET&/api/v1/users/me&appid=xxx&nonce=xxx&timestamp=xxx`.
+if your `api key` is `123456789`, and your `api secret` is `123456789`, then the `payload` is `GET&/api/v1/users/me&appid=123456789&nonce=nonce11111&timestamp=1541728958`.
 
 And you can make the request:
 
-`GET /api/v1/users/me?appid=xxx&nonce=xxx&timestamp=xxx&sign=xxx`
+`GET /api/v1/users/me?appid=123456789&nonce=nonce11111&sign=2e9652f1f54c20346d1d54d5e7000078b1352a1abd21fadeb4588dc3620ba04c&timestamp=1541728958`
 
 
 ### users
@@ -323,7 +322,7 @@ And you can make the request:
   
 * **Example Request:**
     * **Request:**
-    `GET /api/v1/users/me?appid=05778EA9AD6F48B8983A1826E973155A&nonce=xxx&timestamp=xxx&sign=xxx`
+    `GET /api/v1/users/me?appid=123456789&nonce=nonce11111&sign=2e9652f1f54c20346d1d54d5e7000078b1352a1abd21fadeb4588dc3620ba04c&timestamp=1541728958`
     
     * **Success Response:**  
         * **Code:** 200
@@ -335,7 +334,7 @@ And you can make the request:
                   "data": {
                       "nickname": "",
                       "mobile": "", // Your Phone 
-                      "email": "helloworld@126.com", // Your Email
+                      "email": "helloworld@gmail.com", // Your Email
                       "accounts": [
                           {
                               "currency": "BTC",// Your BTC Account
@@ -427,14 +426,13 @@ And you can make the request:
   `GET`
   
 * **URL**
-  /api/v1/orders
+  /api/v1/processing-orders
 
 * **Description**
-  Get your orders, results is paginated.
+  Get your processing orders.
 
 * **Parameters**
-    * **page`(required)`**:  Specify the page of paginated results. Default value: 1
-    * **limit`(required)`**: Limit the number of returned price levels.
+    * **symbol`(required)`**: The Orders Symbol.
     * **appid`(required)`**: Access key.
     * **nonce`(required)`**: Current timestamp to milisecond (13 digits).
     * **timestamp`(required)`**: Timestamp since Unix Epoch.
@@ -494,7 +492,7 @@ And you can make the request:
                  "code": "10000",
                  "msg": "success",
                  "data": {
-                      "symbol": "TMX_USDT",// Your TMX_USDT symbol
+                       "symbol": "TMX_USDT",// Your TMX_USDT symbol
                        "orderNo": "7210ae281123431ab2f85a81f9706abd",// Your order id
                        "number": 1,// The amount user want to sell/buy.
                        "tradedNumber": 0,// The executed volume
@@ -514,14 +512,13 @@ And you can make the request:
   `GET`
   
 * **URL**
-  /api/v1/orders/history
+  /api/v1/history-orders
 
 * **Description**
   Get your executed trades. Trades are sorted in reverse creation order.
 
 * **Parameters**
-    * **page`(required)`**:  Specify the page of paginated results. Default value: 1
-    * **limit`(required)`**: Limit the number of returned price levels.
+    * **symbol`(required)`**: Symbol, such as TMX_USDT.
     * **appid`(required)`**: Access key.
     * **nonce`(required)`**: Current timestamp to milisecond (13 digits).
     * **timestamp`(required)`**: Timestamp since Unix Epoch.
@@ -529,7 +526,7 @@ And you can make the request:
 
 * **Example Request:**
     * **Request:**
-        /api/v1/orders/history
+        /api/v1/history-orders
     * **Success Response:**  
         * **Code:** 200
         * **Response Body:** 
@@ -575,7 +572,7 @@ And you can make the request:
     * **sign`(required)`**: The signature of your request payload, generated using your secret key.
     
 * **Example Request:**
-    * **Request:**
+    * **Request(PostForm):**
         ```
             POST /api/v1/order/create?appid=05778EA9AD6F48B8983A1826E973155A&nonce=xxx&timestamp=xxx&sign=xxx
             [body]
@@ -591,6 +588,9 @@ And you can make the request:
                 {
                     "code": "10000",
                     "msg": "success"
+                    "data":{
+                        "orderNo": "388faf9a94b34dc1acde5d1babb03586"   // Order No.
+                    }
                 }
         ```
 
@@ -624,38 +624,4 @@ And you can make the request:
                     "code": "10000",
                     "msg": "success"
                 }
-        ```
-     
-### cancel_orders
-* **Method:**
-  `GET`
-  
-* **URL**
-  /api/v1/orders/clear
-
-* **Description**
-  Cancel all your orders.
-* **Parameters**
-    * **tradeType`(required)`**:  One of"ALL","BUY","SELL"
-    * **appid`(required)`**: Access key.
-    * **nonce`(required)`**: Current timestamp to milisecond (13 digits).
-    * **timestamp`(required)`**: Timestamp since Unix Epoch.
-    * **sign`(required)`**: The signature of your request payload, generated using your secret key.
-    
-* **Example Request:**
-    * **Request:**
-     ` GET /api/v1/orders/clear?tradeType=ALL&appid=05778EA9AD6F48B8983A1826E973155A&nonce=xxx&timestamp=xxx&sign=xxx`
-
-    * **Success Response:**
-        * **Code:** 200
-        * **Response Body:** 
-
-        ```
-                {
-                    "code": "10000",
-                    "msg": "success",
-                    "data":["1111","2222"]// List Orders has been cancled
-                  
-                }
-        ```
-
+        ```  

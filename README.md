@@ -33,7 +33,7 @@ The WebSocket API document can be found here: https://github.com/tryminexAPI/try
  
 **End Point**
 ----
-The base API endpoint is `https://api.tryminex.com:9000`
+The base API endpoint is `https://api.tryminex.com`
 
 **Response Message**
 ----

@@ -3,6 +3,9 @@
 ## Beta Warning
 Please be kindly noticed that currently this version is in BETA and we may keep developing. Some changes would be expected in later versions.
 
+## Demo
+[【Python】](https://github.com/tryminexAPI/python-tryminex)
+
 ## Web Socket API document
 The WebSocket API document can be found here: https://github.com/tryminexAPI/tryminex-exchange-api-doc/blob/master/WEB_SOCKET_API.md
 
